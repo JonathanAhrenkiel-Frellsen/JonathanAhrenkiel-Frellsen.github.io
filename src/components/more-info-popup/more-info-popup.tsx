@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { SanitizedExternalProject } from '../../interfaces/sanitized-config';
-import { skeleton } from '../../utils';
+// import { skeleton } from '../../utils';
 import { RxCross2 } from 'react-icons/rx';
 
 const MoreInfoPopUp = ({

@@ -1,4 +1,4 @@
-import { LOCAL_STORAGE_KEY_NAME } from '../constants';
+// import { LOCAL_STORAGE_KEY_NAME } from '../constants';
 import { DEFAULT_CUSTOM_THEME } from '../constants/default-custom-theme';
 import { DEFAULT_THEMES } from '../constants/default-themes';
 import {
