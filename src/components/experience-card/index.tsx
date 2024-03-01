@@ -7,17 +7,20 @@ const ListItem = ({
   position,
   company,
   companyLink,
+  imgUrl,
 }: {
   time: React.ReactNode;
   position?: React.ReactNode;
   company?: React.ReactNode;
   companyLink?: string;
+  imgUrl?: string;
 }) => (
   <li className="mb-5 ml-4">
     <div
       className="absolute w-2 h-2 bg-base-300 rounded-full border border-base-300 mt-1.5"
       style={{ left: '-4.5px' }}
     ></div>
+    <img src={imgUrl} alt="" className="float-start h-10 w-10 mr-5" />
     <div className="my-0.5 text-xs">{time}</div>
     <h3 className="font-semibold">{position}</h3>
     <div className="mb-4 font-normal">
@@ -79,12 +82,14 @@ const ExperienceCard = ({
                   .filter(
                     (experience) =>
                       experience.company ||
+                      experience.imgUrl ||
                       experience.position ||
                       experience.from ||
                       experience.to,
                   )
                   .map((experience, index) => (
                     <ListItem
+                      imgUrl={experience.imgUrl}
                       key={index}
                       time={`${experience.from} - ${experience.to}`}
                       position={experience.position}

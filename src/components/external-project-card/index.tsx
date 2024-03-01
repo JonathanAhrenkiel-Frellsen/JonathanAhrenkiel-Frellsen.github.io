@@ -8,11 +8,15 @@ const ExternalProjectCard = ({
   header,
   loading,
   googleAnalyticId,
+  is_side_projects,
+  setSelectedProject,
 }: {
   externalProjects: SanitizedExternalProject[];
   header: string;
   loading: boolean;
   googleAnalyticId?: string;
+  is_side_projects: boolean;
+  setSelectedProject?: (project: SanitizedExternalProject) => void;
 }) => {
   const renderSkeleton = () => {
     const array = [];
@@ -67,60 +71,78 @@ const ExternalProjectCard = ({
   };
 
   const renderExternalProjects = () => {
-    return externalProjects.map((item, index) => (
-      <a
-        className="card shadow-lg compact bg-base-100 cursor-pointer"
-        key={index}
-        href={item.link}
-        onClick={(e) => {
-          e.preventDefault();
+    return externalProjects.map(
+      (item, index) =>
+        !item.is_side_project != is_side_projects && (
+          <div
+            className="card shadow-lg compact bg-base-100 cursor-pointer"
+            key={index}
+            onClick={(e) => {
+              e.preventDefault();
 
-          try {
-            if (googleAnalyticId) {
-              ga.event('Click External Project', {
-                post: item.title,
-              });
-            }
-          } catch (error) {
-            console.error(error);
-          }
+              if (item.link) {
+                try {
+                  if (googleAnalyticId) {
+                    ga.event('Click External Project', {
+                      post: item.title,
+                    });
+                  }
+                } catch (error) {
+                  console.error(error);
+                }
 
-          window?.open(item.link, '_blank');
-        }}
-      >
-        <div className="p-8 h-full w-full">
-          <div className="flex items-center flex-col">
-            <div className="w-full">
-              <div className="px-4">
-                <div className="text-center w-full">
-                  <h2 className="font-semibold text-lg tracking-wide text-center opacity-60 mb-2">
-                    {item.title}
-                  </h2>
-                  {item.imageUrl && (
-                    <div className="avatar opacity-90">
-                      <div className="w-20 h-20 mask mask-squircle">
-                        <LazyImage
-                          src={item.imageUrl}
-                          alt={'thumbnail'}
-                          placeholder={skeleton({
-                            widthCls: 'w-full',
-                            heightCls: 'h-full',
-                            shape: '',
-                          })}
-                        />
-                      </div>
+                window?.open(item.link, '_blank');
+              } else {
+                setSelectedProject && setSelectedProject(item);
+              }
+            }}
+          >
+            <div className="p-8 h-full w-full">
+              <div className="flex items-center flex-col">
+                <div className="w-full">
+                  <div className="px-4">
+                    <div className="text-center w-full">
+                      <h2 className="font-semibold text-lg tracking-wide text-center opacity-60 mb-2">
+                        {item.title}
+                      </h2>
+                      {item.thumbnail_url && (
+                        <div className="avatar opacity-90">
+                          <div className="w-20 h-20 mask mask-squircle">
+                            <LazyImage
+                              src={item.thumbnail_url}
+                              alt={'thumbnail'}
+                              placeholder={skeleton({
+                                widthCls: 'w-full',
+                                heightCls: 'h-full',
+                                shape: '',
+                              })}
+                            />
+                          </div>
+                        </div>
+                      )}
+                      {item.tags && (
+                        <div className="mt-2 flex items-center flex-wrap justify-center">
+                          {item.tags.map((tag, index) => (
+                            <span
+                              key={index}
+                              className="m-1 text-xs inline-flex items-center font-bold leading-sm px-3 py-1 badge-primary bg-opacity-90 rounded-full"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                      <p className="mt-1 text-base-content text-opacity-60 text-sm">
+                        {item.short_description}
+                      </p>
                     </div>
-                  )}
-                  <p className="mt-1 text-base-content text-opacity-60 text-sm">
-                    {item.description}
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </a>
-    ));
+        ),
+    );
   };
 
   return (

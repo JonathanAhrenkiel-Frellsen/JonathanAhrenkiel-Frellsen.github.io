@@ -29,107 +29,199 @@ const CONFIG = {
       },
     },
     external: {
-      header: 'My Projects',
+      header: 'Projects i have worked on',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
+          title: 'Based Capital AG',
+          is_side_project: false,
+          short_description:
+            'This is a project I worked on as a lead developer. The software was a python codebase for running trading strategies on crypto markets and automated market making. I also developed a rust backtester for the strategies. The project was a success and is still running today.',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.\n<img src="https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg" alt="gallery" />\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: [
+            'Python',
+            'Pandas',
+            'Numpy',
+            'Rust',
+            'High Performance Computing',
+            'Matplotlib',
+            'Trading',
+            'Crypto',
+          ],
+          thumbnail_url:
+            'https://media.licdn.com/dms/image/C4D0BAQHJR4bGdGXbOw/company-logo_100_100/0/1630576117654/based_capital_logo?e=1717632000&v=beta&t=1WnPqFQMa1GSfZvyjWPz_4HmVlm9yALrTfXpNoUY3w0',
+          images_url: [
             'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          ],
         },
         {
-          title: 'Project Name',
-          description:
+          title: 'DTU - Chemical filtering proccesses',
+          is_side_project: false,
+          short_description:
+            'This is a project I`m working on part time as a consultant. The project is about developing a machine learning model for predicting the outcome of chemical filtering proccesses. The project is still ongoing.',
+          long_description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
-          imageUrl:
+          thumbnail_url:
+            'https://media.licdn.com/dms/image/D4E0BAQHYKcm_kkO6WA/company-logo_100_100/0/1692512920097/technical_university_of_denmark_logo?e=1717632000&v=beta&t=FPghG7A79_yegDEZyzKD8eOXZGk0egbmGboJqcjkBNw',
+          tags: ['Python', 'PyTorch', 'RNN', 'Pandas', 'Numpy', 'Matplotlib'],
+          images_url: [
             'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          ],
+          link: '/DTU',
+        },
+        {
+          title: 'Central Capital Solutions',
+          is_side_project: false,
+          short_description:
+            'This is a project for streame lineing the loan application process. I worked on the project as a full stack engineer to develop a funnel for new users and a portal for handling important documents, kyc and other information for loan approval. The project was a success and is still running today',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: [
+            'HTML',
+            'CSS',
+            'TypeScript',
+            'React',
+            'Angular',
+            'Google Cloud Console',
+            'Node.js',
+          ],
+          thumbnail_url:
+            'https://media.licdn.com/dms/image/D4D0BAQE4e5sx9IXnsA/company-logo_100_100/0/1692026410339/central_capital_solutions_logo?e=1717632000&v=beta&t=CsjVL1sfFxGpxXNCRxqDmFbM9I_NMpIO_ut7HxTOtok',
+          images_url: [
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          ],
+          link: '/CCS',
+        },
+        {
+          title: 'The Capital',
+          is_side_project: false,
+          short_description:
+            'This is a new/social media website about Crypto i was a apart of developing. My responsebility for this project was frontend and backend of the website.',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: ['HTML', 'CSS', 'JavaScript', 'Angular', 'Node.js', 'AWS'],
+          thumbnail_url:
+            'https://media.licdn.com/dms/image/D4E0BAQH6tWYRBoxt-g/company-logo_100_100/0/1699005235072/thecapitalio_logo?e=1717632000&v=beta&t=aGZQT3xBy9hShZrtoRlpgY1jbEBvjOix8HpopBw4nsg',
+          images_url: [
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          ],
+          link: '/codeery',
+        },
+        {
+          title: 'Fill Out',
+          is_side_project: true,
+          short_description:
+            'This is a new/social media website about Crypto i was a apart of developing. My responsebility for this project was frontend and backend of the website.',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: ['Unity', 'C#', 'Mobile', 'Game'],
+          thumbnail_url:
+            'https://media.licdn.com/dms/image/D4E0BAQH6tWYRBoxt-g/company-logo_100_100/0/1699005235072/thecapitalio_logo?e=1717632000&v=beta&t=aGZQT3xBy9hShZrtoRlpgY1jbEBvjOix8HpopBw4nsg',
+          images_url: [
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          ],
+          link: '/codeery',
         },
       ],
     },
   },
   seo: {
-    title: 'Portfolio of Ariful Alam',
+    title: 'Portfolio of Jonathan Ahrenkiel Frellsen',
     description: '',
     imageURL: '',
   },
   social: {
-    linkedin: 'ariful-alam',
-    twitter: 'arif_szn',
-    mastodon: 'arifszn@mastodon.social',
-    facebook: '',
-    instagram: '',
-    youtube: '', // example: 'pewdiepie'
-    dribbble: '',
-    behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
-    stackoverflow: '', // example: '1/jeff-atwood'
-    skype: '',
-    telegram: '',
-    website: 'https://www.arifszn.com',
-    phone: '',
-    email: 'arifulalamszn@gmail.com',
+    linkedin: 'Jonathan Ahrenkiel-Frellsen',
+    phone: '+45 22 12 69 50',
+    email: 'jola190500@gmail.com',
+    company_email: 'jaf@codeery.com',
   },
   resume: {
     fileUrl:
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
   },
   skills: [
-    'PHP',
-    'Laravel',
+    'HTML',
+    'CSS',
     'JavaScript',
     'React.js',
+    'Angular',
     'Node.js',
-    'Nest.js',
-    'MySQL',
     'PostgreSQL',
-    'Git',
+    'Python',
+    'Rust',
+    'C#',
+    'Unity',
     'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
+    'Google Cloud Platform',
+    'Azure',
+    'AWS',
+    'Keras',
+    'PyTorch',
+    'TensorFlow',
   ],
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
+      imgUrl:
+        'https://media.licdn.com/dms/image/D4E0BAQHYKcm_kkO6WA/company-logo_100_100/0/1692512920097/technical_university_of_denmark_logo?e=1717632000&v=beta&t=FPghG7A79_yegDEZyzKD8eOXZGk0egbmGboJqcjkBNw',
+      company: 'DTU',
+      position: 'Konsulent',
+      from: 'October 2023',
       to: 'Present',
-      companyLink: 'https://example.com',
+      companyLink:
+        'https://www.linkedin.com/school/technical-university-of-denmark/mycompany/verification/',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
-      to: 'August 2021',
-      companyLink: 'https://example.com',
+      imgUrl:
+        'https://media.licdn.com/dms/image/D4D0BAQE4e5sx9IXnsA/company-logo_100_100/0/1692026410339/central_capital_solutions_logo?e=1717632000&v=beta&t=CsjVL1sfFxGpxXNCRxqDmFbM9I_NMpIO_ut7HxTOtok',
+      company: 'Central Capital Solutions',
+      position: 'Full stack engineer',
+      from: 'September 2022',
+      to: 'Present',
+      companyLink:
+        'https://www.linkedin.com/company/central-capital-solutions/',
     },
-  ],
-  certifications: [
     {
-      name: 'Lorem ipsum',
-      body: 'Lorem ipsum dolor sit amet',
-      year: 'March 2022',
-      link: 'https://example.com',
+      imgUrl:
+        'https://media.licdn.com/dms/image/C4D0BAQHJR4bGdGXbOw/company-logo_100_100/0/1630576117654/based_capital_logo?e=1717632000&v=beta&t=1WnPqFQMa1GSfZvyjWPz_4HmVlm9yALrTfXpNoUY3w0',
+      company: 'Based Capital AG',
+      position: 'Lead Developer',
+      from: 'November 2020',
+      to: 'Present',
+      companyLink:
+        'https://www.linkedin.com/company/69489725/admin/feed/posts/?feedType=following',
+    },
+    {
+      imgUrl:
+        'https://media.licdn.com/dms/image/D4E0BAQHgkhWk9w_oQQ/company-logo_100_100/0/1694896213156/codeery_logo?e=1717632000&v=beta&t=jMYLEDyJSWyh8OtMbh-mUVvL6C9tQJcpjOy1f3r7ZTA',
+      company: 'Codeery ApS',
+      position: 'Co-Founder',
+      from: 'December 2016',
+      to: 'Present',
+      companyLink: 'https://www.linkedin.com/company/codeery/',
+    },
+    {
+      imgUrl:
+        'https://media.licdn.com/dms/image/D4E0BAQH6tWYRBoxt-g/company-logo_100_100/0/1699005235072/thecapitalio_logo?e=1717632000&v=beta&t=aGZQT3xBy9hShZrtoRlpgY1jbEBvjOix8HpopBw4nsg',
+      company: 'The Capital',
+      position: 'Full stack engineer & Lead Developer',
+      from: 'April 2019',
+      to: 'November 2020',
+      companyLink: 'https://www.linkedin.com/company/thecapitalio/',
     },
   ],
   educations: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2015',
-      to: '2019',
-    },
-    {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'University of Copenhagen',
+      degree: 'Bachelor of Science in Machine Learning and Data Science',
+      from: '2019',
+      to: '2023',
     },
   ],
   // Display articles from your medium or dev account. (Optional)
@@ -208,13 +300,6 @@ const CONFIG = {
       '--rounded-btn': '3rem',
     },
   },
-
-  // Optional Footer. Supports plain text or HTML.
-  footer: `Made with <a 
-      class="text-primary" href="https://github.com/arifszn/gitprofile"
-      target="_blank"
-      rel="noreferrer"
-    >GitProfile</a> and ❤️`,
 
   enablePWA: true,
 };

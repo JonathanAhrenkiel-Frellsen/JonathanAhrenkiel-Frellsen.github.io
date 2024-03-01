@@ -11,24 +11,26 @@ import {
 import { HelmetProvider } from 'react-helmet-async';
 import '../assets/index.css';
 import { getInitialTheme, getSanitizedConfig, setupHotjar } from '../utils';
-import { SanitizedConfig } from '../interfaces/sanitized-config';
-import ErrorPage from './error-page';
-import HeadTagEditor from './head-tag-editor';
+import {
+  SanitizedConfig,
+  SanitizedExternalProject,
+} from '../interfaces/sanitized-config';
+import ErrorPage from '../components/error-page';
+import HeadTagEditor from '../components/head-tag-editor';
 import { DEFAULT_THEMES } from '../constants/default-themes';
-import ThemeChanger from './theme-changer';
 import { BG_COLOR } from '../constants';
-import AvatarCard from './avatar-card';
+import AvatarCard from '../components/avatar-card';
 import { Profile } from '../interfaces/profile';
-import DetailsCard from './details-card';
-import SkillCard from './skill-card';
-import ExperienceCard from './experience-card';
-import EducationCard from './education-card';
-import CertificationCard from './certification-card';
+import DetailsCard from '../components/details-card';
+import SkillCard from '../components/skill-card';
+import ExperienceCard from '../components/experience-card';
+import EducationCard from '../components/education-card';
+import CertificationCard from '../components/certification-card';
 import { GithubProject } from '../interfaces/github-project';
-import GithubProjectCard from './github-project-card';
-import ExternalProjectCard from './external-project-card';
-import BlogCard from './blog-card';
-import Footer from './footer';
+import GithubProjectCard from '../components/github-project-card';
+import ExternalProjectCard from '../components/external-project-card';
+import Footer from '../components/footer';
+import MoreInfoPopUp from '../components/more-info-popup/more-info-popup';
 
 /**
  * Renders the GitProfile component.
@@ -45,6 +47,9 @@ const GitProfile = ({ config }: { config: Config }) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [githubProjects, setGithubProjects] = useState<GithubProject[]>([]);
+
+  const [selectedProject, setSelectedProject] =
+    useState<null | SanitizedExternalProject>(null);
 
   const getGithubProjects = useCallback(
     async (publicRepoCount: number): Promise<GithubProject[]> => {
@@ -197,14 +202,14 @@ const GitProfile = ({ config }: { config: Config }) => {
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-box">
                 <div className="col-span-1">
                   <div className="grid grid-cols-1 gap-6">
-                    {!sanitizedConfig.themeConfig.disableSwitch && (
+                    {/* {!sanitizedConfig.themeConfig.disableSwitch && (
                       <ThemeChanger
                         theme={theme}
                         setTheme={setTheme}
                         loading={loading}
                         themeConfig={sanitizedConfig.themeConfig}
                       />
-                    )}
+                    )} */}
                     <AvatarCard
                       profile={profile}
                       loading={loading}
@@ -245,6 +250,31 @@ const GitProfile = ({ config }: { config: Config }) => {
                 </div>
                 <div className="lg:col-span-2 col-span-1">
                   <div className="grid grid-cols-1 gap-6">
+                    {sanitizedConfig.projects.external.projects.length !==
+                      0 && (
+                      <>
+                        <ExternalProjectCard
+                          is_side_projects={false}
+                          loading={loading}
+                          header={sanitizedConfig.projects.external.header}
+                          externalProjects={
+                            sanitizedConfig.projects.external.projects
+                          }
+                          setSelectedProject={setSelectedProject}
+                          googleAnalyticId={sanitizedConfig.googleAnalytics.id}
+                        />
+                        <ExternalProjectCard
+                          is_side_projects={true}
+                          loading={loading}
+                          header={'Side Projects'}
+                          externalProjects={
+                            sanitizedConfig.projects.external.projects
+                          }
+                          setSelectedProject={setSelectedProject}
+                          googleAnalyticId={sanitizedConfig.googleAnalytics.id}
+                        />
+                      </>
+                    )}
                     {sanitizedConfig.projects.github.display && (
                       <GithubProjectCard
                         header={sanitizedConfig.projects.github.header}
@@ -255,28 +285,16 @@ const GitProfile = ({ config }: { config: Config }) => {
                         googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
                       />
                     )}
-                    {sanitizedConfig.projects.external.projects.length !==
-                      0 && (
-                      <ExternalProjectCard
-                        loading={loading}
-                        header={sanitizedConfig.projects.external.header}
-                        externalProjects={
-                          sanitizedConfig.projects.external.projects
-                        }
-                        googleAnalyticId={sanitizedConfig.googleAnalytics.id}
-                      />
-                    )}
-                    {sanitizedConfig.blog.display && (
-                      <BlogCard
-                        loading={loading}
-                        googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
-                        blog={sanitizedConfig.blog}
-                      />
-                    )}
                   </div>
                 </div>
               </div>
             </div>
+            {selectedProject != null && (
+              <MoreInfoPopUp
+                project={selectedProject}
+                setSelectedProject={setSelectedProject}
+              />
+            )}
             {sanitizedConfig.footer && (
               <footer
                 className={`p-4 footer ${BG_COLOR} text-base-content footer-center`}

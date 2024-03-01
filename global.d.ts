@@ -77,8 +77,12 @@ interface ExternalProjects {
    */
   projects?: {
     title: string;
-    description?: string;
-    imageUrl?: string;
+    is_side_project: boolean;
+    short_description?: string;
+    long_description?: string;
+    thumbnail_url?: string;
+    images_url?: string[];
+    tags?: string[];
     link: string;
   }[];
 }
@@ -186,6 +190,16 @@ interface Social {
    * Email
    */
   email?: string;
+
+  /**
+   * Email
+   */
+  personal_email?: string;
+
+  /**
+   * Email
+   */
+  company_email?: string;
 }
 
 interface Resume {

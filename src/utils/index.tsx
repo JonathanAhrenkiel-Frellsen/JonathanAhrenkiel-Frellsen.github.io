@@ -77,6 +77,8 @@ export const getSanitizedConfig = (
         email: config?.social?.email,
         skype: config?.social?.skype,
         telegram: config?.social?.telegram,
+        personal_email: config?.social?.personal_email,
+        company_email: config?.social?.company_email,
       },
       resume: {
         fileUrl: config?.resume?.fileUrl || '',
@@ -99,7 +101,7 @@ export const getSanitizedConfig = (
         display: !!config?.blog?.username && !!config?.blog?.source,
       },
       themeConfig: {
-        defaultTheme: config?.themeConfig?.defaultTheme || DEFAULT_THEMES[0],
+        defaultTheme: config?.themeConfig?.defaultTheme || DEFAULT_THEMES[1],
         disableSwitch: config?.themeConfig?.disableSwitch || false,
         respectPrefersColorScheme:
           config?.themeConfig?.respectPrefersColorScheme || false,
@@ -138,29 +140,7 @@ export const getSanitizedConfig = (
 };
 
 export const getInitialTheme = (themeConfig: SanitizedThemeConfig): string => {
-  if (themeConfig.disableSwitch) {
-    return themeConfig.defaultTheme;
-  }
-
-  if (
-    typeof window !== 'undefined' &&
-    !(localStorage.getItem(LOCAL_STORAGE_KEY_NAME) === null)
-  ) {
-    const savedTheme = localStorage.getItem(LOCAL_STORAGE_KEY_NAME);
-
-    if (savedTheme && themeConfig.themes.includes(savedTheme)) {
-      return savedTheme;
-    }
-  }
-
-  if (themeConfig.respectPrefersColorScheme && !themeConfig.disableSwitch) {
-    return typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : themeConfig.defaultTheme;
-  }
-
-  return themeConfig.defaultTheme;
+  return themeConfig.themes[0];
 };
 
 export const skeleton = ({

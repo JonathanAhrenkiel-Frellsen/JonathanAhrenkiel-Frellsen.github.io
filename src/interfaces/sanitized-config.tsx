@@ -21,8 +21,12 @@ export interface SanitizedGitHubProjects {
 
 export interface SanitizedExternalProject {
   title: string;
-  description?: string;
-  imageUrl?: string;
+  is_side_project: boolean;
+  short_description?: string;
+  long_description?: string;
+  thumbnail_url?: string;
+  images_url?: string[];
+  tags?: string[];
   link: string;
 }
 
@@ -59,6 +63,8 @@ export interface SanitizedSocial {
   telegram?: string;
   phone?: string;
   email?: string;
+  personal_email?: string;
+  company_email?: string;
 }
 
 export interface SanitizedResume {
@@ -71,6 +77,7 @@ export interface SanitizedExperience {
   from: string;
   to: string;
   companyLink?: string;
+  imgUrl?: string;
 }
 
 export interface SanitizedCertification {
