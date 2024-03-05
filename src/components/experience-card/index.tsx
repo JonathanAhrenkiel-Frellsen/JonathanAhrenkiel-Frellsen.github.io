@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { SanitizedExperience } from '../../interfaces/sanitized-config';
 import { skeleton } from '../../utils';
+import { useTranslation } from 'react-i18next';
 
 const ListItem = ({
   time,
@@ -60,6 +61,8 @@ const ExperienceCard = ({
 
     return array;
   };
+
+  const { t } = useTranslation();
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="card-body">
@@ -68,7 +71,9 @@ const ExperienceCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-70">Experience</span>
+              <span className="text-base-content opacity-70">
+                {t('experience_card.title')}
+              </span>
             )}
           </h5>
         </div>

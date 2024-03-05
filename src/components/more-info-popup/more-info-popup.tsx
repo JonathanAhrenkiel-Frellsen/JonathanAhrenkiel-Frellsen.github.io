@@ -2,6 +2,11 @@ import { useEffect } from 'react';
 import { SanitizedExternalProject } from '../../interfaces/sanitized-config';
 // import { skeleton } from '../../utils';
 import { RxCross2 } from 'react-icons/rx';
+import { Route, Routes } from 'react-router-dom';
+import BasedCapital from '../../pages/more-info/BasedCapital';
+import DTU from '../../pages/more-info/DTU';
+import FillOut from '../../pages/more-info/FillOut';
+import KYC from '../../pages/more-info/KYC';
 
 const MoreInfoPopUp = ({
   project,
@@ -35,21 +40,21 @@ const MoreInfoPopUp = ({
   // make a popup where the background turns dark and the card is in the middle
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 overflow-y-auto"
+      className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 overflow-y-auto h-1/1"
       onClick={() => {
         close_popup();
       }}
     >
       <div
-        className="bg-base-100 shadow-lg compact max-w-lg mx-auto rounded-lg overflow-hidden"
+        className="bg-base-100 shadow-lg compact max-w-lg mx-auto rounded-lg overflow-hidden overflow-y-auto h-4/5 p-5"
         onClick={(e) => {
           // Stop the event from bubbling up to the parent div
           e.stopPropagation();
         }}
       >
-        <div className="card-body relative">
+        <div className="relative">
           <div
-            className="absolute top-8 right-8 cursor-pointer"
+            className="absolute top-1 right-1 cursor-pointer"
             onClick={() => {
               close_popup();
             }}
@@ -62,10 +67,15 @@ const MoreInfoPopUp = ({
           </div>
           <div className="p-3">
             {/* Rendering rich text content */}
-            <div
-              className="-m-1 flex flex-wrap justify-center"
-              dangerouslySetInnerHTML={{ __html: project.long_description! }}
-            ></div>
+            <Routes>
+              <Route path={'/Based Capital AG'} element={<BasedCapital />} />
+              <Route
+                path={'/DTU - Chemical filtering proccesses'}
+                element={<DTU />}
+              />
+              <Route path={'/Fill Out'} element={<FillOut />} />
+              <Route path={'/AI KYC System'} element={<KYC />} />
+            </Routes>
           </div>
         </div>
       </div>

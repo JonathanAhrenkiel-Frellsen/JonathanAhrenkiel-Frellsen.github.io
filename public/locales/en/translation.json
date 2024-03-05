@@ -1,0 +1,60 @@
+{
+  "language_card": {
+    "title": "Language",
+    "subtitle": "Select your language",
+    "change_theme": "Change language"
+  },
+  "projects_card": {
+    "title": "Projects I have worked on"
+  },
+  "side_projects_card": {
+    "title": "Side projects"
+  },
+  "about_card": {
+    "description": "My name is Jonathan Ahrenkiel-Frellsen, I'm 23 years old and i have been programming in my spare time, school and work for the last 10 years. I have a passion for programming and I love to learn new things. I have a lot of experience with web development, but I also have experience with other types of programming. Some of the projects I have worked on I'm displaying here. If you want more information feel free to contract me."
+  },
+  "tech_card": {
+    "title": "Some technologies I have worked with",
+    "resume_title": "Skills"
+  },
+  "experience_card": {
+    "title": "Timeline"
+  },
+  "education_card": {
+    "title": "Education"
+  },
+  "Based Capital AG": {
+    "p1": "There are multible applications made in this company. The main application is a codebase for running trading strategies on crypto markets. It supports technical and sentimental analysis, one strategy can use data from multible markets, and more advanced candles (like volume candles) are supported. The bots launched with the codebase can also be controlled by telegram. The code bases main focus is fast development, deployment and execution. This codebase was made in python. A backtester made in rust was also made this is because dry running a stategy in a python codebase is slow. ",
+    "p2": "Here are some of the commands that can be used to comunicate with the launched bots.",
+    "p3": "Here is an example of a list function for listing all the running bots",
+    "p4": "In the python code base it is posible to plot the indicators and candles. Here is a video that plots a simple SMA strategy",
+    "p5": "This is a project I worked on as a lead developer. The software was a python codebase for running trading strategies on crypto markets and automated market making. I also developed a rust backtester for the strategies. The project was a success and is still running today.",
+    "description": "This is a project I worked on as a lead developer. The software was a python codebase for running trading strategies on crypto markets and automated market making. I also developed a rust backtester for the strategies. The project was a success and is still running today."
+  },
+  "DTU - Chemical filtering proccesses": {
+    "description": "This is a project I`m working on part time as a consultant. The project is about developing a machine learning model for predicting the outcome of chemical filtering proccesses. The project is still ongoing."
+  },
+  "Central Capital Solutions": {
+    "description": "This is a project for streame lineing the loan application process. I worked on the project as a full stack engineer to develop a funnel for new users and a portal for handling important documents, kyc and other information for loan approval. The project was a success and is still running today"
+  },
+  "The Capital": {
+    "description": "This is a news/social media website about Crypto i was a apart of developing. My responsebility for this project was frontend and backend of the website."
+  },
+  "Fill Out": {
+    "p1": "Fill Out is a game made in unity. The game is a puzzle game where you have to fill out the board with the right shapes. The levels are randomly generated.",
+    "p2": "Above are some screenshots of the game. On the left is the menu and on the rights is an example level. The idea is to drag and drop the shapes from the bottom so that each row and column has the corect amount of filled out squares.",
+    "p3": "This is the project in unity shown in a phone simulator. If you want to have a look at the code click the github button. Its important to mention this is a project I did for fun so alot of phone sizes are not supported, and you need unity version 2021.x",
+    "description": "Fill Out is a game made in unity. The game is a puzzle game where you have to fill out the board with the right shapes. I made the game in my spare time."
+  },
+  "AI KYC System": {
+    "p1": "This is a web app I developed as a part of the Central Capital Solutions project. The project was about developing machine learning models for recognicing the users face and reading documents for kyc purposes. The project was a success and is still running today.",
+    "p2": "This is the start page. It gives the user an overview over what information is needed",
+    "p3": "Once they begin the KYC proccess they can upload a picture of them and thier ID",
+    "p4": "This video shows the face recognition in action. The model is able to verify if a face is in the picture and if the face it not looking at the camera, is too far away or to close you cannot take the picture.",
+    "p5": "This is what it looks like when the user has taken the picture of their face and uploaded a passport. Notice the passport information is on the website I have covered it up for privacy reasons.",
+    "description": "This is a projected that ended up being used as a part of the Central Capital Solutions project. The project was about developing machine learning models for recognicing the users face and reading documents for kyc purposes. The project was a success and is still running today."
+  },
+  "CV Website": {
+    "description": "This website that I use as my CV. It is a fork of Arifszn CV project where I have added some more functionality. I made the website in my spare time. The website is made with react and is hosted on github pages. It can also generate a pdf of my CV. Try it out!"
+  }
+}

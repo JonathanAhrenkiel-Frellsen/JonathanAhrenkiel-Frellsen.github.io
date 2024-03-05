@@ -1,0 +1,60 @@
+{
+  "language_card": {
+    "title": "Sprog",
+    "subtitle": "Vælg dit sprog",
+    "change_theme": "Skift sprog"
+  },
+  "projects_card": {
+    "title": "Projekter jeg har arbejdet på"
+  },
+  "side_projects_card": {
+    "title": "Side projekter"
+  },
+  "about_card": {
+    "description": "Mit navn er Jonathan Ahrenkiel-Frellsen, jeg er 23 år gammel, og jeg har programmeret i min fritid, skole og arbejde de sidste 10 år. Jeg har en passion for programmering og elsker at lære nye ting. Jeg har meget erfaring med webudvikling, men jeg har også erfaring med andre typer programmering. Nogle af de projekter, jeg har arbejdet på, viser jeg her. Hvis du vil have mere information, er du velkommen til at kontakte mig."
+  },
+  "tech_card": {
+    "title": "Nogle teknologier, jeg har arbejdet med",
+    "resume_title": "Skills"
+  },
+  "experience_card": {
+    "title": "Tidslinje"
+  },
+  "education_card": {
+    "title": "Uddannelse"
+  },
+  "Based Capital AG": {
+    "p1": "Der er flere applikationer lavet i denne virksomhed. Hovedapplikationen er en kodebase til at køre handelsstrategier på kryptomarkeder. Den understøtter teknisk og sentimentel analyse, én strategi kan bruge data fra flere markeder, og mere avancerede lys (som volumenlys) understøttes. Bots lanceret med kodebasen kan også kontrolleres via telegram. Kodebasens hovedfokus er hurtig udvikling, udrulning og eksekvering. Denne kodebase blev lavet i python. En backtester lavet i rust blev også lavet, da tørkørsel af en strategi i en python-kodebase er langsom.",
+    "p2": "Her er nogle af de kommandoer, der kan bruges til at kommunikere med de lancerede bots.",
+    "p3": "Her er et eksempel på en liste funktion for at liste alle de kørende bots",
+    "p4": "I python-kodebasen er det muligt at plotte indikatorer og lys. Her er en video, der plotter en simpel SMA-strategi",
+    "p5": "Dette er et projekt, jeg arbejdede på som lead developer. Softwaren var en python-kodebase til at køre handelsstrategier på kryptomarkeder og automatiseret market making. Jeg udviklede også en rust-backtester til strategierne. Projektet var en succes og kører stadig i dag.",
+    "description": "Dette er et projekt, jeg arbejdede på som lead developer. Softwaren var en python-kodebase til at køre handelsstrategier på kryptomarkeder og automatiseret market making. Jeg udviklede også en rust-backtester til strategierne. Projektet var en succes og kører stadig i dag."
+  },
+  "DTU - Chemical filtering proccesses": {
+    "description": "Dette er et projekt, jeg arbejder på deltid som konsulent. Projektet handler om at udvikle en maskinlæringsmodel til at forudsige resultatet af kemiske filtreringsprocesser. Projektet er stadig i gang."
+  },
+  "Central Capital Solutions": {
+    "description": "Dette er et projekt til at strømline ansøgningsprocessen for lån. Jeg arbejdede på projektet som full stack-ingeniør for at udvikle en tragt for nye brugere og en portal til at håndtere vigtige dokumenter, kyc og andre oplysninger til långodkendelse. Projektet var en succes og kører stadig i dag."
+  },
+  "The Capital": {
+    "description": "Dette er en nyheds-/social medie webside om krypto, som jeg var en del af at udvikle. Mit ansvar for dette projekt var frontend og backend af websiden."
+  },
+  "Fill Out": {
+    "p1": "Fill Out er et spil lavet i unity. Spillet er et puslespil, hvor du skal udfylde brættet med de rigtige former. Niveauerne genereres tilfældigt.",
+    "p2": "Ovenfor er nogle skærmbilleder af spillet. Til venstre er menuen og til højre er et eksempelniveau. Ideen er at trække og slippe formerne fra bunden, så hver række og kolonne har det korrekte antal udfyldte firkanter.",
+    "p3": "Dette er projektet i unity vist i en telefon simulator. Hvis du vil se koden, klik på github-knappen. Det er vigtigt at nævne, dette er et projekt, jeg lavede for sjov, så mange telefonstørrelser understøttes ikke, og du skal bruge unity version 2021.x",
+    "description": "Fill Out er et spil lavet i unity. Spillet er et puslespil, hvor du skal udfylde brættet med de rigtige former. Jeg lavede spillet i min fritid."
+  },
+  "AI KYC System": {
+    "p1": "Dette er en webapp, jeg udviklede som en del af Central Capital Solutions-projektet. Projektet handlede om at udvikle maskinlæringsmodeller til at genkende brugerens ansigt og læse dokumenter til kyc-formål. Projektet var en succes og kører stadig i dag.",
+    "p2": "Dette er startsiden. Den giver brugeren et overblik over hvilke oplysninger der er nødvendige",
+    "p3": "Når de begynder KYC-processen, kan de uploade et billede af sig selv og deres ID",
+    "p4": "Denne video viser ansigtsgenkendelsen i aktion. Modellen er i stand til at verificere, om et ansigt er på billedet, og hvis ansigtet ikke kigger på kameraet, er for langt væk eller for tæt på, kan du ikke tage billedet.",
+    "p5": "Sådan ser det ud, når brugeren har taget billedet af deres ansigt og uploadet et pas. Bemærk, at pasinformationen er på websiden, jeg har dækket den til af hensyn til privatlivets fred.",
+    "description": "Dette er et projekt, der endte med at blive brugt som en del af Central Capital Solutions-projektet. Projektet handlede om at udvikle maskinlæringsmodeller til at genkende brugerens ansigt og læse dokumenter til kyc-formål. Projektet var en succes og kører stadig i dag."
+  },
+  "CV Website": {
+    "description": "Denne webside, som jeg bruger som mit CV. Det er en fork af Arifszn CV-projektet, hvor jeg har tilføjet noget mere funktionalitet. Jeg lavede websiden i min fritid. Websiden er lavet med react og hostes på github sider. Den kan også generere en pdf af mit CV. Prøv det!"
+  }
+}

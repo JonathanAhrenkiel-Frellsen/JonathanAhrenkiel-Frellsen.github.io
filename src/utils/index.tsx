@@ -8,6 +8,7 @@ import {
 } from '../interfaces/sanitized-config';
 import { hotjar } from 'react-hotjar';
 import colors from '../data/colors.json';
+import { useTranslation } from 'react-i18next';
 
 export const isDarkishTheme = (appliedTheme: string): boolean => {
   return ['dark', 'halloween', 'forest', 'black', 'luxury', 'dracula'].includes(
@@ -26,6 +27,8 @@ type Colors = {
 export const getSanitizedConfig = (
   config: Config,
 ): SanitizedConfig | Record<string, never> => {
+  const { t } = useTranslation();
+
   try {
     return {
       github: {
@@ -51,7 +54,8 @@ export const getSanitizedConfig = (
           },
         },
         external: {
-          header: config?.projects?.external?.header || 'My Projects',
+          header:
+            config?.projects?.external?.header || t('projects_card.title'),
           projects: config?.projects?.external?.projects || [],
         },
       },

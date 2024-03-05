@@ -168,7 +168,7 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                   icon={<FaLinkedin />}
                   title="LinkedIn:"
                   value={social.linkedin}
-                  link={`https://www.linkedin.com/in/${social.linkedin}`}
+                  link={`https://www.linkedin.com/in/jonathan-ahrenkiel-frellsen-251805164/`}
                 />
               )}
               {social?.dribbble && (

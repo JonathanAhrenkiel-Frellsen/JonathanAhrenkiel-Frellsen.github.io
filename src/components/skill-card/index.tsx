@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { skeleton } from '../../utils';
 
 const SkillCard = ({
@@ -7,6 +8,8 @@ const SkillCard = ({
   loading: boolean;
   skills: string[];
 }) => {
+  const { t } = useTranslation();
+
   const renderSkeleton = () => {
     const array = [];
     for (let index = 0; index < 12; index++) {
@@ -28,7 +31,9 @@ const SkillCard = ({
             {loading ? (
               skeleton({ widthCls: 'w-32', heightCls: 'h-8' })
             ) : (
-              <span className="text-base-content opacity-70">Tech Stack</span>
+              <span className="text-base-content opacity-70">
+                {t('tech_card.title')}
+              </span>
             )}
           </h5>
         </div>

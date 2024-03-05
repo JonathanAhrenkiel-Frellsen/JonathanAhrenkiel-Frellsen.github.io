@@ -9,7 +9,7 @@ const CONFIG = {
    * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
    * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
    */
-  base: '/cv/',
+  base: '/',
   projects: {
     github: {
       display: true, // Display GitHub projects?
@@ -29,7 +29,6 @@ const CONFIG = {
       },
     },
     external: {
-      header: 'Projects i have worked on',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
@@ -48,13 +47,10 @@ const CONFIG = {
             'Matplotlib',
             'Trading',
             'Crypto',
+            'Postgres',
           ],
           thumbnail_url:
             'https://media.licdn.com/dms/image/C4D0BAQHJR4bGdGXbOw/company-logo_100_100/0/1630576117654/based_capital_logo?e=1717632000&v=beta&t=1WnPqFQMa1GSfZvyjWPz_4HmVlm9yALrTfXpNoUY3w0',
-          images_url: [
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          ],
         },
         {
           title: 'DTU - Chemical filtering proccesses',
@@ -66,11 +62,6 @@ const CONFIG = {
           thumbnail_url:
             'https://media.licdn.com/dms/image/D4E0BAQHYKcm_kkO6WA/company-logo_100_100/0/1692512920097/technical_university_of_denmark_logo?e=1717632000&v=beta&t=FPghG7A79_yegDEZyzKD8eOXZGk0egbmGboJqcjkBNw',
           tags: ['Python', 'PyTorch', 'RNN', 'Pandas', 'Numpy', 'Matplotlib'],
-          images_url: [
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          ],
-          link: '/DTU',
         },
         {
           title: 'Central Capital Solutions',
@@ -90,11 +81,7 @@ const CONFIG = {
           ],
           thumbnail_url:
             'https://media.licdn.com/dms/image/D4D0BAQE4e5sx9IXnsA/company-logo_100_100/0/1692026410339/central_capital_solutions_logo?e=1717632000&v=beta&t=CsjVL1sfFxGpxXNCRxqDmFbM9I_NMpIO_ut7HxTOtok',
-          images_url: [
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          ],
-          link: '/CCS',
+          link: 'https://ccs.financial/',
         },
         {
           title: 'The Capital',
@@ -106,11 +93,7 @@ const CONFIG = {
           tags: ['HTML', 'CSS', 'JavaScript', 'Angular', 'Node.js', 'AWS'],
           thumbnail_url:
             'https://media.licdn.com/dms/image/D4E0BAQH6tWYRBoxt-g/company-logo_100_100/0/1699005235072/thecapitalio_logo?e=1717632000&v=beta&t=aGZQT3xBy9hShZrtoRlpgY1jbEBvjOix8HpopBw4nsg',
-          images_url: [
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          ],
-          link: '/codeery',
+          link: 'https://thecapital.io/',
         },
         {
           title: 'Fill Out',
@@ -120,13 +103,34 @@ const CONFIG = {
           long_description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
           tags: ['Unity', 'C#', 'Mobile', 'Game'],
-          thumbnail_url:
-            'https://media.licdn.com/dms/image/D4E0BAQH6tWYRBoxt-g/company-logo_100_100/0/1699005235072/thecapitalio_logo?e=1717632000&v=beta&t=aGZQT3xBy9hShZrtoRlpgY1jbEBvjOix8HpopBw4nsg',
-          images_url: [
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
+          thumbnail_url: '/projects/FillOut/logo.png',
+        },
+        {
+          title: 'AI KYC System',
+          is_side_project: true,
+          short_description: '',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: [
+            'React',
+            'HTML5',
+            'OpenAI',
+            'Haar Cascade',
+            'Image Recognition',
+            'LNN',
+            'OCR',
           ],
-          link: '/codeery',
+          thumbnail_url: 'projects/KYC/logo.png',
+        },
+        {
+          title: 'CV Website',
+          is_side_project: true,
+          short_description: '',
+          long_description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          tags: ['React', 'HTML5', 'PDF Generation', 'Advanced Git/Github'],
+          thumbnail_url: '/logo.png',
+          link: 'https://github.com/JonathanAhrenkiel-Frellsen/cv',
         },
       ],
     },
@@ -165,6 +169,7 @@ const CONFIG = {
     'Keras',
     'PyTorch',
     'TensorFlow',
+    'Figma',
   ],
   experiences: [
     {

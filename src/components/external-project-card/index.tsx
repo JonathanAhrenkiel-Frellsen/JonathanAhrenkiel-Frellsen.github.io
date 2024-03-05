@@ -2,6 +2,8 @@ import { Fragment } from 'react';
 import LazyImage from '../lazy-image';
 import { ga, skeleton } from '../../utils';
 import { SanitizedExternalProject } from '../../interfaces/sanitized-config';
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const ExternalProjectCard = ({
   externalProjects,
@@ -18,6 +20,8 @@ const ExternalProjectCard = ({
   is_side_projects: boolean;
   setSelectedProject?: (project: SanitizedExternalProject) => void;
 }) => {
+  const { t } = useTranslation();
+
   const renderSkeleton = () => {
     const array = [];
     for (let index = 0; index < externalProjects.length; index++) {
@@ -70,6 +74,8 @@ const ExternalProjectCard = ({
     return array;
   };
 
+  let navigate = useNavigate();
+
   const renderExternalProjects = () => {
     return externalProjects.map(
       (item, index) =>
@@ -79,6 +85,8 @@ const ExternalProjectCard = ({
             key={index}
             onClick={(e) => {
               e.preventDefault();
+
+              navigate('/' + item.title);
 
               if (item.link) {
                 try {
@@ -133,7 +141,7 @@ const ExternalProjectCard = ({
                         </div>
                       )}
                       <p className="mt-1 text-base-content text-opacity-60 text-sm">
-                        {item.short_description}
+                        {t(item.title + '.description')}
                       </p>
                     </div>
                   </div>

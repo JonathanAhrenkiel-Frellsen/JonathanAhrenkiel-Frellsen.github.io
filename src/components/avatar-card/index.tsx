@@ -1,10 +1,15 @@
+import { pdf } from '@react-pdf/renderer';
 import { FALLBACK_IMAGE } from '../../constants';
 import { Profile } from '../../interfaces/profile';
 import { skeleton } from '../../utils';
 import LazyImage from '../lazy-image';
+import Resume from '../resume-pop-up/resume';
+import { SanitizedConfig } from '../../interfaces/sanitized-config';
+import { useTranslation } from 'react-i18next';
 
 interface AvatarCardProps {
   profile: Profile | null;
+  sanitizedConfig: SanitizedConfig | Record<string, never>;
   loading: boolean;
   avatarRing: boolean;
   resumeFileUrl?: string;
@@ -20,10 +25,13 @@ interface AvatarCardProps {
  */
 const AvatarCard: React.FC<AvatarCardProps> = ({
   profile,
+  sanitizedConfig,
   loading,
   avatarRing,
   resumeFileUrl,
 }): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <div className="card shadow-lg compact bg-base-100">
       <div className="grid place-items-center py-8">
@@ -73,7 +81,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
           <div className="mt-3 text-base-content text-opacity-60 font-mono">
             {loading || !profile
               ? skeleton({ widthCls: 'w-48', heightCls: 'h-5' })
-              : profile.bio}
+              : t('about_card.description')}
           </div>
         </div>
         {resumeFileUrl &&
@@ -82,15 +90,30 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
               {skeleton({ widthCls: 'w-40', heightCls: 'h-8' })}
             </div>
           ) : (
-            <a
-              href={resumeFileUrl}
-              target="_blank"
+            <div
+              onClick={async () => {
+                // check if sanitizedConfig has type SanitizedConfig
+
+                if (
+                  profile !== null &&
+                  sanitizedConfig.hasOwnProperty('github')
+                ) {
+                  const blob = await pdf(
+                    Resume({
+                      profile: profile,
+                      config: sanitizedConfig as any,
+                      t: t,
+                    }),
+                  ).toBlob();
+                  const url = URL.createObjectURL(blob);
+                  window.open(url, '_blank');
+                }
+              }}
               className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
-              download
               rel="noreferrer"
             >
               Download Resume
-            </a>
+            </div>
           ))}
       </div>
     </div>

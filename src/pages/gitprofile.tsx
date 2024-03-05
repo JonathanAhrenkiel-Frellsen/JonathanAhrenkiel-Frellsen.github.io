@@ -31,6 +31,9 @@ import GithubProjectCard from '../components/github-project-card';
 import ExternalProjectCard from '../components/external-project-card';
 import Footer from '../components/footer';
 import MoreInfoPopUp from '../components/more-info-popup/more-info-popup';
+import LanguageChanger from '../components/language-changer';
+import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 /**
  * Renders the GitProfile component.
@@ -50,6 +53,10 @@ const GitProfile = ({ config }: { config: Config }) => {
 
   const [selectedProject, setSelectedProject] =
     useState<null | SanitizedExternalProject>(null);
+
+  const { id } = useParams();
+
+  const { t } = useTranslation();
 
   const getGithubProjects = useCallback(
     async (publicRepoCount: number): Promise<GithubProject[]> => {
@@ -135,6 +142,16 @@ const GitProfile = ({ config }: { config: Config }) => {
   ]);
 
   useEffect(() => {
+    if (id !== undefined) {
+      setSelectedProject(
+        sanitizedConfig.projects.external.projects.find(
+          (project) => project.title === id,
+        ) || null,
+      );
+    }
+  }, []);
+
+  useEffect(() => {
     if (Object.keys(sanitizedConfig).length === 0) {
       setError(INVALID_CONFIG_ERROR);
     } else {
@@ -186,6 +203,11 @@ const GitProfile = ({ config }: { config: Config }) => {
   return (
     <HelmetProvider>
       <div className="fade-in h-screen">
+        {/* {profile && (
+          <PDFViewer height={1000} width={1000}>
+            <Resume profile={profile!} config={sanitizedConfig as any} />
+          </PDFViewer>
+        )} */}
         {error ? (
           <ErrorPage
             status={error.status}
@@ -210,8 +232,10 @@ const GitProfile = ({ config }: { config: Config }) => {
                         themeConfig={sanitizedConfig.themeConfig}
                       />
                     )} */}
+                    <LanguageChanger loading={loading} />
                     <AvatarCard
                       profile={profile}
+                      sanitizedConfig={sanitizedConfig}
                       loading={loading}
                       avatarRing={sanitizedConfig.themeConfig.displayAvatarRing}
                       resumeFileUrl={sanitizedConfig.resume.fileUrl}
@@ -266,7 +290,7 @@ const GitProfile = ({ config }: { config: Config }) => {
                         <ExternalProjectCard
                           is_side_projects={true}
                           loading={loading}
-                          header={'Side Projects'}
+                          header={t('side_projects_card.title')}
                           externalProjects={
                             sanitizedConfig.projects.external.projects
                           }
