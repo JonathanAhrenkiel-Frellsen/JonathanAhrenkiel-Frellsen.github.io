@@ -90,7 +90,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
               {skeleton({ widthCls: 'w-40', heightCls: 'h-8' })}
             </div>
           ) : (
-            <div
+            <button
               onClick={async () => {
                 // check if sanitizedConfig has type SanitizedConfig
 
@@ -113,7 +113,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
               rel="noreferrer"
             >
               Download Resume
-            </div>
+            </button>
           ))}
       </div>
     </div>
