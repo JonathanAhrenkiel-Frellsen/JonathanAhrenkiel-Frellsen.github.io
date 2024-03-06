@@ -105,7 +105,7 @@ const ExternalProjectCard = ({
               }
             }}
           >
-            <div className="p-8 h-full w-full">
+            <div className="p-8 pb-14 h-full w-full">
               <div className="flex items-center flex-col">
                 <div className="w-full">
                   <div className="px-4">
@@ -144,6 +144,11 @@ const ExternalProjectCard = ({
                         {t(item.title + '.description')}
                       </p>
                     </div>
+                    <p className="absolute p-4 pb-6 bottom-0 left-0 right-0 w-full text-center font-semibold">
+                      {item.link
+                        ? t('projects_card.go_to')
+                        : t('projects_card.read_more')}
+                    </p>
                   </div>
                 </div>
               </div>

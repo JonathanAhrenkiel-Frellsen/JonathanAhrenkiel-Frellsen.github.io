@@ -1,11 +1,14 @@
 {
+  "Present": "Nu",
   "language_card": {
     "title": "Sprog",
     "subtitle": "Vælg dit sprog",
     "change_theme": "Skift sprog"
   },
   "projects_card": {
-    "title": "Projekter jeg har arbejdet på"
+    "title": "Projekter jeg har arbejdet på",
+    "go_to": "Gå til projektets hjemmeside",
+    "read_more": "Læs mere om"
   },
   "side_projects_card": {
     "title": "Side projekter"

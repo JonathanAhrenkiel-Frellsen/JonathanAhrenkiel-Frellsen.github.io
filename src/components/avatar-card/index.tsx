@@ -109,7 +109,7 @@ const AvatarCard: React.FC<AvatarCardProps> = ({
                   window.open(url, '_blank');
                 }
               }}
-              className="btn btn-outline btn-sm text-xs mt-6 opacity-50"
+              className="btn btn-primary btn-m text-x mt-6"
               rel="noreferrer"
             >
               Download Resume

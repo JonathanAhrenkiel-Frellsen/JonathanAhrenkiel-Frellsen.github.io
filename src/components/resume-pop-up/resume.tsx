@@ -44,6 +44,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 5,
   },
+  timeText: {
+    color: '#646B74',
+    fontSize: 10,
+    width: '100%',
+    textAlign: 'center',
+  },
   subheader: {
     width: '100%',
     textAlign: 'center',
@@ -194,6 +200,19 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
                   style={styles.projectPhoto}
                   src={project.thumbnail_url}
                 />
+                <Text style={styles.timeText}>
+                  {
+                    config.experiences.filter(
+                      (x) => x.company === project.title,
+                    )[0].from
+                  }{' '}
+                  -{' '}
+                  {t(
+                    config.experiences.filter(
+                      (x) => x.company === project.title,
+                    )[0].to,
+                  )}
+                </Text>
 
                 <View style={styles.containerTags}>
                   {project.tags &&

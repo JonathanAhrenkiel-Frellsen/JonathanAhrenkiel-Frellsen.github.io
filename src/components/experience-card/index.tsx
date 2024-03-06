@@ -96,7 +96,7 @@ const ExperienceCard = ({
                     <ListItem
                       imgUrl={experience.imgUrl}
                       key={index}
-                      time={`${experience.from} - ${experience.to}`}
+                      time={`${experience.from} - ${t(experience.to)}`}
                       position={experience.position}
                       company={experience.company}
                       companyLink={

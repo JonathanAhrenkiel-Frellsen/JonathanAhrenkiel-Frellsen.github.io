@@ -1,11 +1,14 @@
 {
+  "Present": "Present",
   "language_card": {
     "title": "Language",
     "subtitle": "Select your language",
     "change_theme": "Change language"
   },
   "projects_card": {
-    "title": "Projects I have worked on"
+    "title": "Projects I have worked on",
+    "go_to": "Go to project website",
+    "read_more": "Read more"
   },
   "side_projects_card": {
     "title": "Side projects"

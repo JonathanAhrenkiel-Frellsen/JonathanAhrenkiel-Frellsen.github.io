@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../i18n';
 
 const LanguageChanger = ({ loading }: { loading: boolean }) => {
-  const [language, setLanguage] = useState<string>('en');
+  const [language, setLanguage] = useState<string>('dk');
 
   const { t } = useTranslation();
 
   useEffect(() => {
     if (language == 'Dansk') {
       i18n.changeLanguage('dk');
-    } else {
+    } else if (language == 'English') {
       i18n.changeLanguage('en');
     }
   }, [language]);

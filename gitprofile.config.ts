@@ -175,7 +175,7 @@ const CONFIG = {
     {
       imgUrl:
         'https://media.licdn.com/dms/image/D4E0BAQHYKcm_kkO6WA/company-logo_100_100/0/1692512920097/technical_university_of_denmark_logo?e=1717632000&v=beta&t=FPghG7A79_yegDEZyzKD8eOXZGk0egbmGboJqcjkBNw',
-      company: 'DTU',
+      company: 'DTU - Chemical filtering proccesses',
       position: 'Konsulent',
       from: 'October 2023',
       to: 'Present',

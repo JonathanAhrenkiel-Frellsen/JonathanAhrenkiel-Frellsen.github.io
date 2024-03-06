@@ -23,12 +23,16 @@ const FillOut: React.FC = () => {
         <img
           src="/projects/FillOut/FillOutMenu.png"
           alt=""
-          style={{ width: '200px', float: 'left' }}
+          style={{ width: 'calc(50% - 12.5px)', float: 'left' }}
         />
         <img
           src="/projects/FillOut/FillOutGame.png"
           alt=""
-          style={{ width: '200px', float: 'left', marginLeft: '25px' }}
+          style={{
+            width: 'calc(50% - 12.5px)',
+            float: 'left',
+            marginLeft: '25px',
+          }}
         />
       </div>
       <p>{t('Fill Out.p2')}</p>

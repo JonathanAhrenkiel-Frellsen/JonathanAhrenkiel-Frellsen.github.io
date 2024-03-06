@@ -8,7 +8,7 @@ i18n
   .use(LanguageDetector) // detect user language
   .use(initReactI18next) // pass i18n instance to react-i18next
   .init({
-    fallbackLng: 'en', // use en if detected lng is not available
+    fallbackLng: 'dk', // use en if detected lng is not available
     debug: true, // set to false in production
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
