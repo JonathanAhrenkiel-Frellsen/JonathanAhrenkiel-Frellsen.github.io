@@ -5,6 +5,17 @@
     "subtitle": "Select your language",
     "change_theme": "Change language"
   },
+  "resume": {
+    "profile_text_title": "What can i offer you?",
+    "profile_text": "Advanced Programming Skills: I have great experience for my age, indicating a deep commitment to learning and skill development(, )Full-Stack Development Expertise: Capable of handling both front-end and back-end development tasks, ensuring a comprehensive understanding of the entire software development lifecycle(, )Proficiency in Multiple Programming Languages: Skilled in Python, Rust, C#, among others, showcasing versatility and the ability to adapt to different technologies and projects(, )Proactive and Energetic: Brings good energy to the team, contributing to a positive work environment and driving projects forward with enthusiasm and initiative",
+    "about_me": "About me",
+    "about_me_text": "I like to play Magic the Gathering, I play video games like Counter Strike 2, I like to run and bike, I like to program in my own time"
+  },
+  "contact_card": {
+    "title": "Contact information",
+    "email": "Email",
+    "phone_nr": "Phone number"
+  },
   "projects_card": {
     "title": "Projects I have worked on",
     "go_to": "Go to project website",
@@ -32,16 +43,16 @@
     "p3": "Here is an example of a list function for listing all the running bots",
     "p4": "In the python code base it is posible to plot the indicators and candles. Here is a video that plots a simple SMA strategy",
     "p5": "This is a project I worked on as a lead developer. The software was a python codebase for running trading strategies on crypto markets and automated market making. I also developed a rust backtester for the strategies. The project was a success and is still running today.",
-    "description": "This is a project I worked on as a lead developer. The software was a python codebase for running trading strategies on crypto markets and automated market making. I also developed a rust backtester for the strategies. The project was a success and is still running today."
+    "description": "• <b>Background of the project</b> I am a co-founder and Lead developer at Based Capital AG. Based Capital AG is a Swiss-based stock company with a valuation of 0.5 million Swiss francs. • <b>What I have done</b>○ I have created a Python codebase that can run strategies we have developed on crypto markets. ○ I have developed a Rust backtester that can dry run a strategy very efficiently. ○ I have also created a Telegram bot that can control the running bots. ○ I have also made a website that can display the performance of the strategies. ○ I have also created a market making bot that can operate on decentralized DEXes."
   },
   "DTU - Chemical filtering proccesses": {
-    "description": "This is a project I`m working on part time as a consultant. The project is about developing a machine learning model for predicting the outcome of chemical filtering proccesses. The project is still ongoing."
+    "description": "• <b>Background of the project</b> I work part-time as a consultant for a project at DTU. The project is a research project that is on its way to becoming a company. • <b>What I have done</b>○ I have created an RNN model to predict the outcomes of chemical processes. ○ Participated in setting up server infrastructure so the model can run in production."
   },
   "Central Capital Solutions": {
-    "description": "This is a project for streame lineing the loan application process. I worked on the project as a full stack engineer to develop a funnel for new users and a portal for handling important documents, kyc and other information for loan approval. The project was a success and is still running today"
+    "description": "• <b>Background of the project</b> I work here part-time as an employee. The company specializes in making the loan process in Central America easier, among other things through software. • <b>What I have done</b>○ I have created a portal in React where users can view their information, sign documents, upload identification. ○ Participated in setting up a funnel for new customers. ○ I have created an AI model that can recognize faces and read passports."
   },
   "The Capital": {
-    "description": "This is a news/social media website about Crypto i was a apart of developing. My responsebility for this project was frontend and backend of the website."
+    "description": "• <b>Background of the project</b> I work here as a developer paid in equity and a small salary. The Capital is a news/social media platform exclusively about crypto. • <b>What I have done</b>○ I have contributed to the frontend of the web app. ○ I have been involved in developing the backend of the web app."
   },
   "Fill Out": {
     "p1": "Fill Out is a game made in unity. The game is a puzzle game where you have to fill out the board with the right shapes. The levels are randomly generated.",

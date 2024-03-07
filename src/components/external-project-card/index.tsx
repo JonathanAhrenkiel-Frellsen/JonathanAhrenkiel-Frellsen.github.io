@@ -140,9 +140,51 @@ const ExternalProjectCard = ({
                           ))}
                         </div>
                       )}
-                      <p className="mt-1 text-base-content text-opacity-60 text-sm">
-                        {t(item.title + '.description')}
-                      </p>
+                      {t(item.title + '.description').includes('•') && (
+                        <div
+                          className="mt-1 text-base-content text-opacity-60 text-sm text-left"
+                          dangerouslySetInnerHTML={{
+                            __html: t(item.title + '.description')
+                              .split(/(•|○)/)
+                              .map(
+                                (
+                                  text: string,
+                                  index: number,
+                                  array: string[],
+                                ) => {
+                                  const trimmedText = text.trim();
+                                  // Skip empty strings and the actual bullet/indicator characters
+                                  if (
+                                    trimmedText === '' ||
+                                    trimmedText === '•' ||
+                                    trimmedText === '○'
+                                  ) {
+                                    return null;
+                                  }
+
+                                  // Check if the current segment was preceded by a • or ○
+                                  const bullet = array[index - 1];
+                                  if (bullet === '•') {
+                                    // For segments originally starting with •, render them normally
+                                    return '<br>' + trimmedText;
+                                  } else if (bullet === '○') {
+                                    // For segments originally starting with ○, render them with indentation
+                                    return (
+                                      '<br><div style="margin-left: 10px;">o ' +
+                                      trimmedText +
+                                      '</div>'
+                                    );
+                                  }
+                                },
+                              )
+                              .filter((text) => text !== null)
+                              .join(''),
+                          }}
+                        ></div>
+                      )}
+                      {!t(item.title + '.description').includes('•') && (
+                        <p>{t(item.title + '.description')}</p>
+                      )}
                     </div>
                     <p className="absolute p-4 pb-6 bottom-0 left-0 right-0 w-full text-center font-semibold">
                       {item.link

@@ -5,9 +5,24 @@ import {
   Document,
   StyleSheet,
   Image,
+  Font,
 } from '@react-pdf/renderer';
 import { Profile } from '../../interfaces/profile';
 import { SanitizedConfig } from '../../interfaces/sanitized-config';
+import { RiMailFill } from 'react-icons/ri';
+
+Font.register({
+  family: 'Open Sans',
+  fonts: [
+    {
+      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-regular.ttf',
+    },
+    {
+      src: 'https://cdn.jsdelivr.net/npm/open-sans-all@0.1.3/fonts/open-sans-600.ttf',
+      fontWeight: 600,
+    },
+  ],
+});
 
 // Create styles
 const styles = StyleSheet.create({
@@ -40,7 +55,6 @@ const styles = StyleSheet.create({
   },
   header: {
     color: '#646B74',
-    marginTop: 10,
     fontSize: 18,
     marginBottom: 5,
   },
@@ -60,6 +74,23 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 10,
     marginBottom: 5,
+  },
+  boldText: {
+    fontSize: 10,
+    marginBottom: 5,
+    fontFamily: 'Open Sans',
+    fontWeight: 'bold',
+  },
+  textShifted: {
+    fontSize: 10,
+    marginBottom: 2.5,
+    marginLeft: 10,
+  },
+  positionText: {
+    fontSize: 10,
+    color: 'black',
+    width: '100%',
+    textAlign: 'center',
   },
   bioText: {
     fontSize: 10,
@@ -119,10 +150,10 @@ const styles = StyleSheet.create({
   },
   projectPhoto: {
     marginBottom: 10,
-    borderRadius: 10,
-    width: 40,
     height: 40,
+    width: 50,
     margin: 'auto',
+    paddingLeft: '10px',
   },
 
   sectionMaster: {
@@ -141,6 +172,29 @@ interface ResumeProps {
   t: any;
 }
 
+function stringToRich(text: string) {
+  // This regex finds all the <b>...</b> segments along with any text outside of them
+  const regex = /<b>(.*?)<\/b>|([^<]+)(?=<b>|$)/g;
+  let match;
+  const elements = [];
+
+  while ((match = regex.exec(text)) !== null) {
+    // match[1] will contain the text within <b>...</b>, if present
+    // match[2] will contain text outside of <b> tags
+    if (match[1]) {
+      elements.push(
+        <Text key={match.index} style={styles.boldText}>
+          {match[1]}
+        </Text>,
+      );
+    } else if (match[2]) {
+      elements.push(match[2]);
+    }
+  }
+
+  return <Text style={styles.text}>{elements}</Text>;
+}
+
 // Create Document Component
 const Resume = ({ profile, config, t }: ResumeProps) => (
   <Document>
@@ -153,6 +207,19 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
           {/* Text under picture */}
           <Text style={styles.nameTitle}>{profile.name}</Text>
           <Text style={styles.bioText}>{t('about_card.description')}</Text>
+        </View>
+
+        <View style={[styles.sectionMaster]}>
+          {/* Skills */}
+          <Text style={styles.header}>{t('contact_card.title')}</Text>
+          <View style={styles.container}>
+            <Text style={styles.text}>
+              {t('contact_card.email')}: {config.social.email}
+            </Text>
+            <Text style={styles.text}>
+              {t('contact_card.phone_nr')}: {config.social.phone}
+            </Text>
+          </View>
         </View>
 
         <View style={[styles.sectionMaster]}>
@@ -184,10 +251,27 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
             </View>
           </View>
         </View>
+        <View style={styles.sectionMaster}>
+          <Text style={styles.header}>{t('resume.about_me')}</Text>
+          {t('resume.about_me_text')
+            .split(', ')
+            .map((text: string, _: number) => (
+              <Text style={styles.text}>• {text}</Text>
+            ))}
+        </View>
       </View>
 
       {/* Section #2 */}
       <View style={[styles.section, styles.referencesSection]}>
+        <Text style={styles.header}>{t('resume.profile_text_title')}</Text>
+        <View style={styles.projectsMaster}>
+          {t('resume.profile_text')
+            .split('(, )')
+            .map(
+              (text: string, _: number) => stringToRich('• ' + text),
+              // <Text style={styles.text}>{text}</Text>
+            )}
+        </View>
         <Text style={styles.header}>{t('projects_card.title')}</Text>
         {/* List of places worked */}
         {config.projects.external.projects.map(
@@ -200,6 +284,13 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
                   style={styles.projectPhoto}
                   src={project.thumbnail_url}
                 />
+                <Text style={styles.positionText}>
+                  {
+                    config.experiences.filter(
+                      (x) => x.company === project.title,
+                    )[0].position
+                  }
+                </Text>
                 <Text style={styles.timeText}>
                   {
                     config.experiences.filter(
@@ -223,9 +314,33 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
                     ))}
                 </View>
 
-                <Text style={styles.text}>
-                  {t(project.title + '.description')}
-                </Text>
+                {t(project.title + '.description')
+                  .split(/(•|○)/)
+                  .map((text: string, index: number, array: string[]) => {
+                    const trimmedText = text.trim();
+                    // Skip empty strings and the actual bullet/indicator characters
+                    if (
+                      trimmedText === '' ||
+                      trimmedText === '•' ||
+                      trimmedText === '○'
+                    ) {
+                      return null;
+                    }
+
+                    // Check if the current segment was preceded by a • or ○
+                    const bullet = array[index - 1];
+                    if (bullet === '•') {
+                      // For segments originally starting with •, render them normally
+                      return stringToRich('• ' + trimmedText);
+                    } else if (bullet === '○') {
+                      // For segments originally starting with ○, render them with indentation
+                      return (
+                        <Text style={styles.textShifted}>
+                          {'\t'}o {trimmedText}
+                        </Text>
+                      );
+                    }
+                  })}
               </View>
             ),
         )}
