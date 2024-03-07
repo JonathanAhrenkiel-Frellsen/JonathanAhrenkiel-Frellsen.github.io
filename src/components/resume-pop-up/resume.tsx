@@ -9,7 +9,6 @@ import {
 } from '@react-pdf/renderer';
 import { Profile } from '../../interfaces/profile';
 import { SanitizedConfig } from '../../interfaces/sanitized-config';
-import { RiMailFill } from 'react-icons/ri';
 
 Font.register({
   family: 'Open Sans',
