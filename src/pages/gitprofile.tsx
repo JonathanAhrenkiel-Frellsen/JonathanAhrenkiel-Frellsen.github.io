@@ -34,6 +34,8 @@ import MoreInfoPopUp from '../components/more-info-popup/more-info-popup';
 import LanguageChanger from '../components/language-changer';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { PDFViewer } from '@react-pdf/renderer';
+import Resume from '../components/resume-pop-up/resume';
 
 /**
  * Renders the GitProfile component.
@@ -203,11 +205,11 @@ const GitProfile = ({ config }: { config: Config }) => {
   return (
     <HelmetProvider>
       <div className="fade-in h-screen">
-        {/* {profile && (
+        {profile && (
           <PDFViewer height={1000} width={1000}>
             <Resume profile={profile!} config={sanitizedConfig as any} t={t} />
           </PDFViewer>
-        )} */}
+        )}
         {error ? (
           <ErrorPage
             status={error.status}

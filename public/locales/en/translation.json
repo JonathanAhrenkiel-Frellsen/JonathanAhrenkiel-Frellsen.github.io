@@ -6,10 +6,12 @@
     "change_theme": "Change language"
   },
   "resume": {
-    "profile_text_title": "What can i offer you?",
-    "profile_text": "Advanced Programming Skills: I have great experience for my age, indicating a deep commitment to learning and skill development(, )Full-Stack Development Expertise: Capable of handling both front-end and back-end development tasks, ensuring a comprehensive understanding of the entire software development lifecycle(, )Proficiency in Multiple Programming Languages: Skilled in Python, Rust, C#, among others, showcasing versatility and the ability to adapt to different technologies and projects(, )Proactive and Energetic: Brings good energy to the team, contributing to a positive work environment and driving projects forward with enthusiasm and initiative",
+    "why_i_applied_here_title": "Why I applied for a job as a Fullstack developer at \nClearVoyage",
+    "why_i_applied_here_text": "<b>Learn with you:</b> Looking forward to learning from the talent at ClearVoyage. I am still young and have a lot to learn \n• <b>Be part of something bigger:</b> Many of the projects I have worked on have been with small to medium-sized companies. I would find it very interesting to work on larger projects",
+    "profile_text_title": "What can I offer you?",
+    "profile_text": "<b>Advanced programming skills</b>: I have extensive experience for my age, which indicates a deep commitment to learning and developing skills(, )<b>Expertise in full-stack development</b>: Capable of handling both front-end and back-end development tasks, ensuring a comprehensive understanding of the entire software development lifecycle(, )<b>Mastery of multiple programming languages</b>: Skilled in Python, Rust, C#, among others, which shows versatility and the ability to adapt to different technologies and projects(, )<b>Proactive and energetic</b>: Brings good energy to the team, contributing to a positive work environment and driving projects forward with enthusiasm and initiative(, )<b>Education in Machine Learning and Data Science</b>: My education has given me a solid understanding of machine learning and data science",
     "about_me": "About me",
-    "about_me_text": "I like to play Magic the Gathering, I play video games like Counter Strike 2, I like to run and bike, I like to program in my own time"
+    "about_me_text": "I like to play Magic the Gathering, I play computer games like Counter Strike 2, I like to run and cycle, I like to program in my spare time"
   },
   "contact_card": {
     "title": "Contact information",

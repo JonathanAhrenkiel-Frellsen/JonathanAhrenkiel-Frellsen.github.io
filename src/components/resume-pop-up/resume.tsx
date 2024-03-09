@@ -262,12 +262,23 @@ const Resume = ({ profile, config, t }: ResumeProps) => (
 
       {/* Section #2 */}
       <View style={[styles.section, styles.referencesSection]}>
+        <Text style={styles.header}>
+          {t('resume.why_i_applied_here_title')}
+        </Text>
+        <View style={styles.projectsMaster}>
+          {t('resume.why_i_applied_here_text')
+            .split('(, )')
+            .map(
+              (text: string, _: number) => stringToRich('• ' + text),
+              // <Text style={styles.text}>{text}</Text>
+            )}
+        </View>
         <Text style={styles.header}>{t('resume.profile_text_title')}</Text>
         <View style={styles.projectsMaster}>
           {t('resume.profile_text')
             .split('(, )')
             .map(
-              (text: string, _: number) => stringToRich('• ' + text),
+              (text: string, _: number) => stringToRich('• ' + text + '\n'),
               // <Text style={styles.text}>{text}</Text>
             )}
         </View>
